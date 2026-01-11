@@ -27,7 +27,7 @@
     font-size: 50px;
     display: block;
     line-height: 1;
-    color: #FFF;
+    color: #d0ffdd;
     @media only screen and (min-width:$cut){
       margin: 0;
       font-size: 100px;
@@ -37,7 +37,7 @@
     font-size: 20px;
     display: block;
     line-height: 1;
-    color: #FFF;
+    color: #d0ffdd;
     margin-top: 10px;
     @media only screen and (min-width:$cut){
       font-size: 40px;
@@ -48,7 +48,7 @@
 .header-links {
   margin: 10px;
   .link {
-    color: #FFF;
+    color: #d0ffdd;
     text-decoration: none;
     font-size: 15px;
     margin: 10px;
@@ -64,22 +64,22 @@
   text-align: center;
   .icon {
     text-align: center;
-    color: #FFF;
+    color: $jade;
     width: 20px;
     height: 20px;
     font-size: 20px;
     padding: 10px;
-    margin: 5px;
-    border-radius: 50%;
-    border: 2px solid #FFF;
+    margin: 8px;
+    border-radius: 20%;
+    border: 3px solid $purple;
     transition: all .7s;
     &:hover {
-      color: $main;
-      background: #FFF;
+      color: $purple;
+      background: $jade;
     }
     &:active {
-      color: $main;
-      background: #FFF;
+      color: $purple;
+      background: $jade;
     }
     @media only screen and (min-width:$cut) {
       width: 35px;
@@ -87,10 +87,14 @@
       font-size: 35px;
     }
   }
+  .fa-bluesky,
+  .fa-comments {
+      padding-right: 12px;
+  }
 }
 
 .down {
-  color: #FFF;
+  color: #d0ffdd;
   position: absolute;
   bottom: 25px;
   width: 100%;
@@ -109,7 +113,7 @@
       transform: translate(-50%, -50%);
       width: 100px;
       height: 100px;
-      fill: #fff;
+      fill: #d0ffdd;
       -webkit-animation: pulse 1.3s infinite;
       animation: pulse 1.3s infinite;
       &:hover {

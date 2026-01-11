@@ -8,14 +8,17 @@
   <title>{% if page.title %}{{ page.title }}{% else %}{{ config.title }}{% endif %}</title>
   <meta name="description" content="{% if page.description %}{{ page.description | striptags | trim | truncate(length=160) }}{% else %}{{ config.description }}{% endif %}">
 
-  <link rel="stylesheet" href="{{ config.base_url ~ "/main.css" }}">
+  <!-- <link rel="stylesheet" href="{{ config.base_url ~ "/main.css" }}"> -->
+  <link rel="stylesheet" type='text/css' href="main.css">
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" /> 
+  <script src="https://kit.fontawesome.com/735a5f5223.js" crossorigin="anonymous"></script>
 </head>
 {% endmacro head %}
 
 {% macro footer() %}
 <footer class="footer">
-    <p>&copy; {{ config.extra.username }}</p>
-    <p>Ported to Zola with <span class="love">❤</span> by <a href="https://github.com/svavs">Silvano Sallese</a> (original by <a href="https://github.com/nrandecker">Nathan Randecker</a>)</p>
+    <p>&copy; {{ config.extra.username }} 2025</p>
+    <!-- <p>Ported to Zola with <span class="love">❤</span> by <a href="https://github.com/svavs">Silvano Sallese</a> (original by <a href="https://github.com/nrandecker">Nathan Randecker</a>)</p> -->
 </footer>
 <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="{{ config.base_url ~ "/js/sweet-scroll.min.js" }}"></script>
@@ -30,17 +33,21 @@
         <span class="site-description">{{ config.extra.user_title | linebreaksbr | safe }}</span>
       </h1>
       <div class="header-icons">
-        <a aria-label="Send email" href="#"><i class="icon fa fa-envelope"></i></a>
-        <a aria-label="My Twitter" target="_blank" href="#"><i class="icon fa fa-twitter" aria-hidden="true"></i></a>
-        <a aria-label="My Google Plus" target="_blank" href="#"><i class="icon fa fa-google-plus" aria-hidden="true"></i></a>
-        <a aria-label="My Github" target="_blank" href="#"><i class="icon fa fa-github-alt" aria-hidden="true"></i></a>
+        <a aria-label="Send email" href="mailto:{{ config.extra.user_email }}"><i class="icon fa-solid fa-envelope"></i></a>
+        <a aria-label="My Twitch" target="_blank" href="https://twitch.tv/{{ config.extra.twitch_username }}"><i class="icon fa-brands fa-twitch" aria-hidden="true"></i></a>
+        <a aria-label="My Bluesky" target="_blank" href="https://bsky.app/profile/{{ config.extra.bsky_username }}"><i class="icon fa-brands fa-bluesky" aria-hidden="true"></i></a>
+        <a aria-label="My Github" target="_blank" href="https://github.com/{{ config.extra.github_username }}"><i class="icon fa-brands fa-github-alt" aria-hidden="true"></i></a>
+        <a aria-label="BBS" target="_blank" href="https://lofac.mintyfresh.love"><i class="icon fa-solid fa-tty"></i></a>
       </div>
       <div class="header-links">
         <a class="link" href="#about" data-scroll>About Me</a>
-        <a class="link" href="#projects" data-scroll>Projects</a>
+        <a class="link" href="#projects" data-scroll>Major Projects</a>
+        <a class="link" href="#game" data-scroll>Game Dev</a>
+        <a class="link" href="#music" data-scroll>Music</a>
+        <a class="link" href="#art" data-scroll>Art</a>
       </div>
   </div>
-  <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
+  <a class="down" href="#about" data-scroll><i class="icon fa-solid fa-chevron-down" aria-hidden="true"></i></a>
 </div>
 {% endmacro header %}
 
