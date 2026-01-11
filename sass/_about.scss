@@ -32,6 +32,8 @@
   text-align: center;
   margin: 5px auto;
   img {
-      display: flex;
+      float: center;
+      max-height: 250px;
+      border-radius: 5px;
   }
 }
