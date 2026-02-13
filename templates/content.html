@@ -1,3 +1,5 @@
+{% import "macros.html" as macros %}
+
 {% macro about() %}
 <div class="user-details">
   <h1> About Me </h1>
@@ -7,7 +9,7 @@
       I'm a <em>cybersecurity-trained software engineer</em> from Melbourne, Australia.
       I've spent the last two years honing various skills while recovering from severe anxiety.
       You've probably come here looking for some of them, so here they are!</p>
-  <p> <a href="cv.pdf" download>(If you're looking for a more traditional resumé, click here.)</a> </p>
+  <p> <a href="mint_cv_2026.pdf" download>(If you're looking for a more traditional resumé, click here.)</a> </p>
 </div>
   <div class="user">
     <div class="tech">
@@ -39,7 +41,7 @@
     </div>
 </div>
 <div class="user-details">
-    <p><em>I will never use any generative AI software to replace creative work.</em></p>
+    <p><h4>I will never use any generative AI software to replace creative work.</h4></p>
 </div>
 {% endmacro about %}
 
@@ -90,7 +92,11 @@
 {% macro music() %}
 <div class="user-details">
     <h1>Music</h1>
-    <p>Info coming soon...</p>
+    <p>I use <a href=https://www.image-line.com/>FL Studio</a> to make music!
+      You can sometimes find me streaming the creation process on my Twitch, linked above.</p><p>
+    Lately, I've been attempting to create a beat every day or two, and I'm only improving!
+    Here's an eclectic playlist hosted on <a href="https://soundcloud.com/chamomileteacup">Soundcloud</a> of everything I've made in this "Beat-a-Day" challenge:</p>
+    {{ macros::soundcloud_widget() }}
 </div>
 <div class="user-music">
     
@@ -100,7 +106,14 @@
 {% macro art() %}
 <div class="user-details">
     <h1>Art</h1>
-    <p>Info coming soon...</p>
+    <p>Sometimes my creative urges bubble over into the visual art space.
+      Using <a href="https://www.clipstudio.net/en/">Clip Studio Paint</a> for more traditional works,
+      and <a href="https://www.aseprite.org/">Aseprite</a> for pixel work, I have been steadily improving
+      my artistic skills.</p><p>
+      Please consider this sample of my work (hover over images to see them in closer detail):
+    </p>
+    {% set data = load_data(path="gallery.toml") -%}
+    {% if data %}{{ macros::gallery(files=data.files) }}{% endif %}
 </div>
 <div class="user-art">
     
@@ -111,6 +124,7 @@
 <div class="user-details">
     <h1>Game Development</h1>
     <p>Info coming soon...</p>
+    {{ macros::under_construction() }}
 </div>
 <div class="user-game">
     

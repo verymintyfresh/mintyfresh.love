@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Prata');
+@import 'vars';
 
 body {
     margin: 0;
@@ -42,12 +43,50 @@ a img {
 sup, sub {
     line-height: 0;
 }
-hline {
-    display: block;
-    height: 2px;
+.hline {
+    align-items: center;
+    height: 1px;
     border: 0;
     border-top: 1px solid #d0ffdd;
-    margin: 1em 0;
+    margin: 1em auto;
     padding: 0;
-    width: 30%;
+    width: 40%;
+}
+.gallery {
+    max-width: 500px;
+    display: block;
+    margin: 1em auto;
+    line-height:0;
+    -webkit-column-count:3; /* split it into 5 columns */
+    -webkit-column-gap:5px; /* give it a 5px gap between columns */
+    -moz-column-count:3;
+    -moz-column-gap:5px;
+    column-count:3;
+    column-gap:5px;
+    place-items: start center;
+    img {
+        position: relative;
+        filter: brightness(0.8) contrast(0.5);
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom:5px; /* to match column gap */
+        transition: filter 0.5s, scale 0.25s;
+        transform-style: preserve-3d;
+        z-index: 0;
+    }
+    img:hover {
+        filter: brightness(1) contrast(1);
+        transition: filter 0.25, scale 0.25s;
+        scale: 2;
+        z-index: 1;
+    }
+    @media only screen and (max-width: $cut) {
+        max-width: 200px;
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}  
+.gallery:has(img:hover) img:not(:hover) {
+    filter: brightness(0.6) contrast(0.3);
 }
