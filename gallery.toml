@@ -4,6 +4,7 @@ files = [
     { path = "justlogo.png", alt = "pixel art chamomile teacup logo" },
     { path = "roszal.jpg", alt = "a punky homestuck troll with a green colour scheme"},
     { path = "lycroe.jpg", alt = "homestuck troll with a blue colour scheme"},
+    { path = "chibi-26-2.png", alt = "a chibi drawn with sparkling red eyes" },
     { path = "marze.jpg", alt = "a snow leopard person with orange hair and teal eyes"},
     { path = "camille.jpg", alt = "pink and purple witch casting a spell"},
     { path = "minteeoni.png", alt = "pixel art oni girl with green hair"},
