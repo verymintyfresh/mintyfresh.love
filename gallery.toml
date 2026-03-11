@@ -1,12 +1,15 @@
 files = [
+    { path = "grtest.png", alt = "a poster for the fictional company Enford"},
     { path = "kintsugi.png", alt = "a humanoid decorated in the japanese kintsugi style"},
     { path = "mintee_thumb.jpg", alt = "a drawing of a homestuck troll with green eyes and purple hair"},
     { path = "justlogo.png", alt = "pixel art chamomile teacup logo" },
+    { path = "weskers.png", alt = "fan poster for mida, the company from marathon"},
     { path = "roszal.jpg", alt = "a punky homestuck troll with a green colour scheme"},
     { path = "lycroe.jpg", alt = "homestuck troll with a blue colour scheme"},
     { path = "chibi-26-2.png", alt = "a chibi drawn with sparkling red eyes" },
-    { path = "marze.jpg", alt = "a snow leopard person with orange hair and teal eyes"},
     { path = "camille.jpg", alt = "pink and purple witch casting a spell"},
+    { path = "marze.jpg", alt = "a snow leopard person with orange hair and teal eyes"},
+    { path = "contract.png", alt = "fan poster for traxus, the company from marathon"},
     { path = "minteeoni.png", alt = "pixel art oni girl with green hair"},
     { path = "varia.jpg", alt = "a very happy looking paintbrush creature"}
 ]
