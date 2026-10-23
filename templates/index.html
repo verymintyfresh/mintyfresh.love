@@ -1,33 +1,30 @@
-{% import "macros.html" as macros %}
-{% import "content.html" as content %}
-
 <!DOCTYPE html>
 <html lang="en">
 
-  {{ macros::head() }}
+    {{<head config={config} />}}
 
   <body>
 
-      {{ macros::header() }}
+      {{<header config={config} />}}
 
       <section id="about">
-        {{ content::about() }}
+          {{<about config={config} />}}
       </section>
 
       <section id="projects">
-        {{ content::projects() }}
-      </section>
-
-      <section id="music">
-          {{ content::music() }}
-      </section>      
-      
-      <section id="art">
-          {{ content::art() }}
+          {{<projects config={config} />}}
       </section>
 
       <section id="game">
-          {{ content::game() }}
+          {{<game config={config} />}}
+      </section>
+
+      <section id="music">
+          {{<music />}}
+      </section>      
+      
+      <section id="art">
+          {{<art config={config} />}}
       </section>
 
       {% block content %}
@@ -35,7 +32,7 @@
       {% endblock content %}
 
 
-      {{ macros::footer() }}
-      {{ macros::google_analytics() }}
+      {{<footer config={config} />}}
+      {{<google_analytics config={config} />}}
 
   </body>

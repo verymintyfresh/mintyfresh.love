@@ -1,21 +1,31 @@
 
-{% macro head() %}
+{% component head(config) %}
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ config.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.description %}{{ page.description | striptags | trim | truncate(length=160) }}{% else %}{{ config.description }}{% endif %}">
+  <title>{% if page %}
+      {% if page.title %}
+          {{ page.title }}
+        {% else %}
+          {{ config.title }}
+      {% endif %}
+      {% endif %}
+  </title>
+  <meta name="description" content="
+              {% if page %}
+              {% if page.description %}
+              {{ page.description | striptags | trim | truncate(length=160) }}{% else %}{{ config.description }}{% endif %}{% endif %}">
 
-  <!-- <link rel="stylesheet" href="{{ config.base_url ~ "/main.css" }}"> -->
+  {# <link rel="stylesheet" href="{{ config.base_url ~ "/main.css" }}"> #}
   <link rel="stylesheet" type='text/css' href="main.css">
   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" /> 
   <script src="https://kit.fontawesome.com/735a5f5223.js" crossorigin="anonymous"></script>
 </head>
-{% endmacro head %}
+{% endcomponent head %}
 
-{% macro footer() %}
+{% component footer(config) %}
 <footer class="footer">
     <p>&copy; {{ config.extra.username }} 2025</p>
     <!-- <p>Ported to Zola with <span class="love">❤</span> by <a href="https://github.com/svavs">Silvano Sallese</a> (original by <a href="https://github.com/nrandecker">Nathan Randecker</a>)</p> -->
@@ -23,14 +33,14 @@
 <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="{{ config.base_url ~ "/js/sweet-scroll.min.js" }}"></script>
 <script src="{{ config.base_url ~ "/js/main.js" }}"></script>
-{% endmacro footer %}
+{% endcomponent footer %}
 
-{% macro header() %}
+{% component header(config) %}
 <div id="particles-js">
   <div class="header">
       <h1>
         <span class="site-title">{{ config.extra.username }}</span>
-        <span class="site-description">{{ config.extra.user_title | linebreaksbr | safe }}</span>
+        <span class="site-description">{{ config.extra.user_title | newlines_to_br | safe }}</span>
       </h1>
       <div class="header-icons">
         <a aria-label="Send email" href="mailto:{{ config.extra.user_email }}"><i class="icon fa-solid fa-envelope"></i></a>
@@ -50,9 +60,9 @@
   </div>
   <a class="down" href="#about" data-scroll><i class="icon fa-solid fa-chevron-down" aria-hidden="true"></i></a>
 </div>
-{% endmacro header %}
+{% endcomponent header %}
 
-{% macro google_analytics() %}
+{% component google_analytics(config) %}
 <!-- Google Analytics -->
 {% if config.extra.google_analytics %}
 <script>
@@ -67,24 +77,24 @@ ga('send', 'pageview');
 }
 </script>
 {% endif %}
-{% endmacro google_analytics %}
+{% endcomponent google_analytics %}
 
-{% macro soundcloud_widget() %}
+{% component soundcloud_widget() %}
 <!-- Soundcloud Widget -->
 <iframe width="40%" height="450" scrolling="no" frameborder="no" allow="autoplay" 
         src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2190734315&color=%23586e75&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
 </iframe>
 <div style="font-size: 10px; color: #fdf6e3;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/chamomileteacup" title="chamomileTeacup" target="_blank" style="color: #fdf6e3; text-decoration: none;">chamomileTeacup</a> · <a href="https://soundcloud.com/chamomileteacup/sets/works" title="Works" target="_blank" style="color: #fdf6e3; text-decoration: none;">Works</a></div>
-{% endmacro soundcloud_widget %}
+{% endcomponent soundcloud_widget %}
 
-{% macro under_construction() %}
+{% component under_construction(config) %}
 <img alt="under construction animated gif" src="{{ config.base_url ~ "/img/underconstruction.gif" }}" />
-{% endmacro under_construction %}
+{% endcomponent under_construction %}
 
-{% macro gallery(files) %}
+{% component gallery(config, files) %}
 <div class="gallery">
 {% for x in files %}
   <img alt="{{ x.alt }}" src="{{ config.base_url ~ "/img/" ~ x.path }}" />
 {% endfor %}
 </div>
-{% endmacro gallery %}
+{% endcomponent gallery %}
