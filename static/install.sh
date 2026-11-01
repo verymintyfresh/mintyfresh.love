@@ -1,0 +1,1 @@
+/home/mint/Documents/code/holberton/holberton-sandbox-init/install.sh
